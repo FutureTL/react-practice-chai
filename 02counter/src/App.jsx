@@ -12,7 +12,11 @@ function App() {
   const addValue = ()=>{
     if(counter <20){
       counter = counter+1
-      setCounter(counter)
+      //sometimes we want to update the state back to back we are writing like this 
+      //just for understanding. So in this case the previous state is taken using a callback.
+
+      setCounter(prevCounter=> prevCounter+1)
+      setCounter(prevCounter=> prevCounter+1)
       console.log(`${counter}, ${Math.random()}`)
     }
 }
