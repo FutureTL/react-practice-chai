@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Profile from './components/Profile'
+import UserContextProvider from './Context/UserContextProvider'
+import Login from './components/Login'
 
+
+//now inside this UserContextProvider whatever components we put in, imagine they are the {children} being received in the UserContextProvider.jsx function
+//go and see it.
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <>
-     
-    </>
+    <UserContextProvider>
+      <Login />
+      <Profile/>
+      
+    </UserContextProvider>
   )
 }
 
